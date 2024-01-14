@@ -138,17 +138,17 @@ func (m Model) View() string{
   
 		default:
 		return lipgloss.JoinHorizontal(lipgloss.Left, focusedStyle.Render(todoView), columnStyle.Render(inProgressView), columnStyle.Render(doneView),)
-        
-	}
-	} else{
-		return "loading"
-	}
+
+  }
+} else{
+  return "loading"
+}
 }
 func main(){
-	m:=New()
-	p:=tea.NewProgram(m)
-	if err:=p.Start();err !=nil {
-		fmt.Println(err)
-		os.Exit(1)
-	}
+  m:=New()
+  p:=tea.NewProgram(m)
+  if err:=p.Start();err !=nil {
+    fmt.Println(err)
+    os.Exit(1)
+  }
 }
